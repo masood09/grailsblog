@@ -58,6 +58,8 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.0.1"
         compile ':cache:1.1.1'
+        compile ":heroku:1.0.1"             // For heroku support
+        compile ':cloud-support:1.0.8'      // For heroku support
         compile ":markdown:1.1.1"
 
         // plugins needed at runtime but not for compilation
