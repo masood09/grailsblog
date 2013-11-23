@@ -13,6 +13,10 @@ class User {
     Date dateCreated
     Date lastUpdated
 
+    static mapping = {
+        table 'author'
+    }
+
     static constraints = {
     }
 
