@@ -24,7 +24,7 @@
 
                 <p>
                     <a href="${ createLink(action: 'create') }" class="btn btn-primary">
-                        <i class="fa fa-plus"></i> Create a new User
+                        <i class="fa fa-plus"></i> Create a new user
                     </a>
                 </p>
 

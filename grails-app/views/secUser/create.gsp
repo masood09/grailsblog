@@ -16,7 +16,7 @@
                         </g:link>
                     </li>
                     <li class="active">
-                        Create a new User
+                        Create a new user
                     </li>
                 </ol>
 
