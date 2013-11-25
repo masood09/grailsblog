@@ -45,9 +45,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i> Posts
-                            </a>
+                            <g:link controller="post" action="index">
+                                <i class="fa fa-files-o"></i> Posts
+                            </g:link>
                         </li>
                         <li>
                             <g:link controller="category" action="index">

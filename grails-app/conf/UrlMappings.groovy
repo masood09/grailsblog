@@ -7,6 +7,8 @@ class UrlMappings {
         "/admin/category"(resources: 'category', excludes: ['show'])
         "/admin/tags"(controller: "tag", action: "index")
         "/admin/tags"(resources: 'tag', excludes: ['show'])
+        "/admin/posts"(controller: "post", action: "index")
+        "/admin/posts"(resources: "post", excludes: ["show"])
 
         "/$controller/$action?/$id?(.${format})?"{
             constraints {

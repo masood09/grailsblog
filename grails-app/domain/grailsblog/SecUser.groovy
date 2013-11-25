@@ -17,6 +17,8 @@ class SecUser {
 
     static transients = ['springSecurityService']
 
+    static hasMany = [posts: Post]
+
     static constraints = {
         firstname blank: false, maxSize: 50
         lastname blank: false, maxSize: 50
