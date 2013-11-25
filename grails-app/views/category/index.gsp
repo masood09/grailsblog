@@ -51,7 +51,7 @@
                             </g:each>
                             <g:unless test="${categoryInstanceList}">
                                 <tr>
-                                    <td colspan="1">
+                                    <td colspan="2">
                                         <p class="noRecord">No Categories Found!</p>
                                     </td>
                                 </tr>
