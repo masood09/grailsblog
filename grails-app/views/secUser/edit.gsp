@@ -40,21 +40,5 @@
                 </g:form>
             </div>
         </div>
-
-        <script type="text/javascript">
-            jQuery(document).ready(function() {
-                jQuery('#changepass').change(function() {
-                    if (jQuery(this).is(':checked')) {
-                        jQuery('#passwordFormGroup').show();
-                        jQuery('#password').attr('name', 'password');
-                        jQuery('#password').attr('required', 'required');
-                    } else {
-                        jQuery('#passwordFormGroup').hide();
-                        jQuery('#password').attr('name', 'changepass');
-                        jQuery('#password').removeAttr('required');
-                    }
-                });
-            });
-        </script>
     </body>
 </html>
