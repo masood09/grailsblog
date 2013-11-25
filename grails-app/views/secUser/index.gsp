@@ -23,7 +23,7 @@
                 </g:if>
 
                 <p>
-                    <a href="${ createLink(controller: 'SecUser', action: 'create') }" class="btn btn-primary">
+                    <a href="${ createLink(action: 'create') }" class="btn btn-primary">
                         <i class="fa fa-plus"></i> Create a new User
                     </a>
                 </p>
