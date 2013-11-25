@@ -6,9 +6,6 @@
     </head>
     <body>
         <div class="row">
-            <g:if test="${secUserInstance.id}">
-                <p>Hello</p>
-            </g:if>
             <div class="col-lg-12">
                 <h1>Create a new user</h1>
 
