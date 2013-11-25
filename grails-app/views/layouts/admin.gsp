@@ -55,9 +55,9 @@
                             </g:link>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i> Tags
-                            </a>
+                            <g:link controller="tag" action="index">
+                                <i class="fa fa-tags"></i> Tags
+                            </g:link>
                         </li>
                         <li>
                             <g:link controller="SecUser" action="index">
