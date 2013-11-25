@@ -50,9 +50,9 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i> Categories
-                            </a>
+                            <g:link controller="category" action="index">
+                                <i class="fa fa-list-ul"></i> Categories
+                            </g:link>
                         </li>
                         <li>
                             <a href="#">
