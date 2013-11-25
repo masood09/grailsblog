@@ -128,7 +128,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/**/css/**':                     ['permitAll'],
     '/**/images/**':                  ['permitAll'],
     '/**/favicon.ico':                ['permitAll'],
-    '/secUser/**':                    ['permitAll']
+    '/secUser/**':                    ['ROLE_ADMIN']
 ]
 grails.plugin.springsecurity.userLookup.usernamePropertyName = 'email'
 grails.plugin.springsecurity.logout.postOnly = false
