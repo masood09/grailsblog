@@ -12,8 +12,22 @@ class PostController {
     static allowedMethods = [save: "POST", update: "PUT"]
 
     def index(Integer max) {
+        def currentUser = springSecurityService.getCurrentUser()
+        def adminRole = SecRole.findByAuthority('ROLE_ADMIN')
+
         params.max = Math.min(max ?: 10, 100)
-        respond Post.list(params), model:[postInstanceCount: Post.count()]
+
+        def posts = Post.list(params)
+        def postsCount = 0
+
+        if (!currentUser.authorities.contains(adminRole)) {
+            posts = Post.findAllByAuthor(currentUser)
+            postsCount = Post.countByAuthor(currentUser)
+        } else {
+            postsCount = Post.count()
+        }
+
+        respond posts, model:[postInstanceCount: postsCount]
     }
 
     def create() {
