@@ -83,6 +83,8 @@ class SecUserController {
             return
         }
 
+        SecUserSecRole.removeAll(secUserInstance)
+
         secUserInstance.delete flush:true
 
         request.withFormat {
