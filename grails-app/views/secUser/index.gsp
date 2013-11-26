@@ -29,13 +29,13 @@
                 </p>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped tablesorter">
+                    <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Fullname <i class="fa fa-sort"></i></th>
-                                <th>Email <i class="fa fa-sort"></i></th>
-                                <th>Is Active? <i class="fa fa-sort"></i></th>
-                                <th>Action <i class="fa fa-sort"></i></th>
+                                <th>Fullname</th>
+                                <th>Email</th>
+                                <th>Is Active?</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>

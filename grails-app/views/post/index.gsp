@@ -29,12 +29,12 @@
                 </p>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped tablesorter">
+                    <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Title <i class="fa fa-sort"></i></th>
-                                <th>Author <i class="fa fa-sort"></i></th>
-                                <th>Slug <i class="fa fa-sort"></i></th>
+                                <th>Title</th>
+                                <th>Author</th>
+                                <th>Slug</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -29,11 +29,11 @@
                 </p>
 
                 <div class="table-responsive">
-                    <table class="table table-bordered table-hover table-striped tablesorter">
+                    <table class="table table-bordered table-hover table-striped">
                         <thead>
                             <tr>
-                                <th>Tag Name <i class="fa fa-sort"></i></th>
-                                <th>Slug <i class="fa fa-sort"></i></th>
+                                <th>Tag Name</th>
+                                <th>Slug</th>
                             </tr>
                         </thead>
                         <tbody>

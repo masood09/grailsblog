@@ -103,8 +103,6 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
         <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
         <script src="${resource(dir: 'js/morris', file: 'chart-data-morris.js')}"></script>
-        <script src="${resource(dir: 'js/tablesorter', file: 'jquery.tablesorter.js')}"></script>
-        <script src="${resource(dir: 'js/tablesorter', file: 'tables.js')}"></script>
 
         <r:layoutResources />
     </body>
