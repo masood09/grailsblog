@@ -9,13 +9,13 @@ before_install:
     - chmod 775 ~/install_gvm.sh
     - ~/install_gvm.sh
     - echo "gvm_auto_answer=true" > ~/.gvm/etc/config
-    - curl -s https://raw.github.com/ctoestreich/gvm/master/src/main/bash/gvm-install.sh > ~/.gvm/src/gvm-install.sh
     - source ~/.gvm/bin/gvm-init.sh
-    - gvm install grails 2.3.1
-    - gvm use grails 2.3.1
+    - gvm install grails 2.3.1 || true
 
 branches:
     only:
         - master
 
-script: ~/.gvm/grails/current/bin/grails test-app --non-interactive
+script: grails clean
+    && grails upgrade --non-interactive
+    && grails test-app --non-interactive
