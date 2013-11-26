@@ -18,4 +18,4 @@ branches:
     only:
         - master
 
-script: grails test-app --non-interactive
+script: ~/.gvm/grails/current/bin/grails test-app --non-interactive
