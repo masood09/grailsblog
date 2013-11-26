@@ -16,6 +16,10 @@ class Post {
         content blank: false, nullable: false, type: 'text'
     }
 
+    static mapping = {
+        content sqlType: 'text'
+    }
+
     def beforeInsert() {
         this.slug = slugGeneratorService.generateSlug(this.class, "slug", title, true)
     }
