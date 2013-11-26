@@ -3,7 +3,7 @@
 <html>
     <head>
         <meta name="layout" content="admin">
-        <title>Grailsblog - Categories</title>
+        <title>Grailsblog - Posts</title>
     </head>
     <body>
         <div class="row">
