@@ -32,6 +32,9 @@ grails.project.dependency.resolution = {
     checksums true // Whether to verify checksums on resolve
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
+    def gebVersion = "0.9.2"
+    def seleniumVersion = "2.32.0"
+
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
 
@@ -45,12 +48,20 @@ grails.project.dependency.resolution = {
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
         mavenRepo 'http://repo.spring.io/milestone'
+
+        // For Geb snapshot
+        mavenRepo "http://oss.sonatype.org/content/repositories/snapshots"
     }
 
     dependencies {
+        test("org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion")
+        test("org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion")
+
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime 'mysql:mysql-connector-java:5.1.24'
         runtime 'postgresql:postgresql:8.4-702.jdbc3'
+
+        test "org.gebish:geb-spock:$gebVersion"
     }
 
     plugins {
@@ -63,7 +74,6 @@ grails.project.dependency.resolution = {
         compile ":markdown:1.1.1"
         compile ':spring-security-core:2.0-RC2'
         compile ":slug-generator:0.3.1"
-        // compile ":geb:0.9.2"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:3.6.10.2" // or ":hibernate4:4.1.11.2"
@@ -74,5 +84,7 @@ grails.project.dependency.resolution = {
         //runtime ":zipped-resources:1.0.1"
         //runtime ":cached-resources:1.1"
         //runtime ":yui-minify-resources:0.1.5"
+
+        test ":geb:$gebVersion"
     }
 }
