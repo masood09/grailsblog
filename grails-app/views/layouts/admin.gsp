@@ -19,10 +19,10 @@
 
         <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css" type="text/css">
 
+        <script src="${resource(dir: 'js', file: 'jquery-1.10.2.js')}"></script>
+
         <g:layoutHead/>
         <r:layoutResources />
-
-        <script src="${resource(dir: 'js', file: 'jquery-1.10.2.js')}"></script>
     </head>
     <body>
         <div id="wrapper">

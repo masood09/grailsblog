@@ -4,6 +4,8 @@
     <head>
         <meta name="layout" content="admin">
         <title>Grailsblog - Edit post ${postInstance.title}</title>
+
+        <script src="${resource(dir: 'js', file: 'epiceditor.min.js')}"></script>
     </head>
     <body>
         <div class="row">

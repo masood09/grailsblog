@@ -6,7 +6,9 @@
 
 <div class="form-group">
     <label for="content">Content <span class="required-indicator">*</span></label>
-    <textarea class="form-control" id="content" name="content" required="required">${postInstance?.content}</textarea>
+    <textarea class="form-control hide" id="content" name="content" required="required">${postInstance?.content}</textarea>
+
+    <div id="epiceditor"></div>
 </div>
 
 <div class="form-group">
@@ -29,3 +31,44 @@
     or
     <a href="${ createLink(controller: 'post', action: 'index') }">Cancel</a>
 </div>
+
+<script type="text/javascript">
+    var opts = {
+        container: 'epiceditor',
+        textarea: 'content',
+        basePath: "${resource(dir: 'css/epiceditor')}",
+        clientSideStorage: false,
+        useNativeFullscreen: true,
+        file: {
+            name: 'epiceditor',
+            defaultContent: '',
+            autoSave: 100
+        },
+        theme: {
+            base: '/themes/base/epiceditor.css',
+            preview: '/themes/preview/github.css',
+            editor: '/themes/editor/epic-dark.css'
+        },
+        button: {
+            preview: true,
+            fullscreen: true,
+            bar: "auto"
+        },
+        focusOnLoad: false,
+        shortcut: {
+            modifier: 18,
+            fullscreen: 70,
+            preview: 80
+        },
+        string: {
+            togglePreview: 'Toggle Preview Mode',
+            toggleEdit: 'Toggle Edit Mode',
+            toggleFullscreen: 'Enter Fullscreen'
+        },
+        autogrow: {
+            minHeight: 200
+        }
+    }
+
+    var editor = new EpicEditor(opts).load();
+</script>

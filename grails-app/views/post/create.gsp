@@ -3,6 +3,8 @@
     <head>
         <meta name="layout" content="admin">
         <title>Grailsblog - Create a new post</title>
+
+        <script src="${resource(dir: 'js', file: 'epiceditor.min.js')}"></script>
     </head>
     <body>
         <div class="row">
