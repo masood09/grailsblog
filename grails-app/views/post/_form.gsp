@@ -32,7 +32,9 @@
     </select>
 </div>
 
-${postInstance?.content}
+<hr>
+<textarea id="content" name="content" class="tinymce-editor">${postInstance?.content}</textarea>
+<hr>
 
 <div class="form-group">
     <g:if test="${postInstance.id}">
@@ -58,4 +60,9 @@ ${postInstance?.content}
 <script type="text/javascript">
     jQuery("#categories").chosen({no_results_text: "Hit ENTER to create a new category:"});
     jQuery("#tags").chosen({no_results_text: "Hit ENTER to create a new tag:"});
+
+    tinymce.init({
+        selector: "textarea.tinymce-editor",
+        height: 400
+    });
 </script>
