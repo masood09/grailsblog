@@ -24,7 +24,7 @@
             <script src="${resource(dir: 'js', file: 'html5shiv.js')}"></script>
         <![endif]-->
 
-        <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css" type="text/css">
+        <!-- <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css" type="text/css"> -->
 
         <script src="${resource(dir: 'js', file: 'jquery-1.10.2.js')}"></script>
 
@@ -107,8 +107,8 @@
         <g:javascript library="application"/>
 
         <script src="${resource(dir: 'js', file: 'bootstrap.js')}"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
+        <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script> -->
         <script src="${resource(dir: 'js/morris', file: 'chart-data-morris.js')}"></script>
 
         <r:layoutResources />
