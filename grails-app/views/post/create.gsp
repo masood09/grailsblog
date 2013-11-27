@@ -4,7 +4,10 @@
         <meta name="layout" content="admin">
         <title>Grailsblog - Create a new post</title>
 
+        <link rel="stylesheet" href="${resource(dir: 'css', file: 'chosen.css')}" type="text/css">
+
         <script src="${resource(dir: 'js', file: 'epiceditor.min.js')}"></script>
+        <script src="${resource(dir: 'js', file: 'chosen.jquery.js')}"></script>
     </head>
     <body>
         <div class="row">
