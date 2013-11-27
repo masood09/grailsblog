@@ -17,6 +17,10 @@
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'sb-admin.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'font-awesome/css', file: 'font-awesome.min.css')}" type="text/css">
 
+        <!--[if lt IE 9]>
+            <script src="${resource(dir: 'js', file: 'html5shiv.js')}"></script>
+        <![endif]-->
+
         <link rel="stylesheet" href="http://cdn.oesmith.co.uk/morris-0.4.3.min.css" type="text/css">
 
         <script src="${resource(dir: 'js', file: 'jquery-1.10.2.js')}"></script>

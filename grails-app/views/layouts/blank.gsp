@@ -17,6 +17,10 @@
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'login.css')}" type="text/css">
         <link rel="stylesheet" href="${resource(dir: 'font-awesome/css', file: 'font-awesome.min.css')}" type="text/css">
 
+        <!--[if lt IE 9]>
+            <script src="${resource(dir: 'js', file: 'html5shiv.js')}"></script>
+        <![endif]-->
+
         <g:layoutHead/>
         <r:layoutResources />
 
