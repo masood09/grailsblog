@@ -409,6 +409,15 @@
         case 13:
           evt.preventDefault();
           if (this.results_showing) {
+            if (!this.is_multiple || this.result_highlight) {
+              return this.result_select(evt);
+            }
+          }
+
+          if ($(this.form_field).hasClass("chosen-create-entry")) {
+            $(this.form_field).append('<option value="' + $(evt.target).val() + '">' + $(evt.target).val() + '</option>');
+            $(this.form_field).trigger('chosen:updated');
+            this.result_highlight = this.search_results.find('li.active-result').last();
             return this.result_select(evt);
           }
           break;

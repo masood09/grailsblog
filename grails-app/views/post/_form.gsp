@@ -13,7 +13,7 @@
 
 <div class="form-group">
     <label for="categories">Categories</label>
-    <select id="categories" name="categories" multiple data-placeholder="Choose categories" class="chosen-select form-control">
+    <select id="categories" name="categories" multiple data-placeholder="Choose categories" class="chosen-select form-control chosen-create-entry">
         <g:each in="${categories}" status="i" var="category">
         <g:if test="${postInstance.id}">
             <option value="${category.name}" <g:if test="${postInstance.categories.contains(category)}">selected="selected"</g:if>>${category.name}</option>
@@ -27,7 +27,7 @@
 
 <div class="form-group">
     <label for="tags">Tags</label>
-    <select id="tags" name="tags" multiple data-placeholder="Choose tags" class="chosen-select form-control">
+    <select id="tags" name="tags" multiple data-placeholder="Choose tags" class="chosen-select form-control chosen-create-entry">
         <g:each in="${tags}" status="i" var="tag">
         <g:if test="${postInstance.id}">
             <option value="${tag.name}" <g:if test="${postInstance.tags.contains(tag)}">selected="selected"</g:if>>${tag.name}</option>
@@ -99,5 +99,6 @@
     }
 
     var editor = new EpicEditor(opts).load();
-    jQuery(".chosen-select").chosen();
+    jQuery("#categories").chosen({no_results_text: "Hit ENTER to create a new category:"});
+    jQuery("#tags").chosen({no_results_text: "Hit ENTER to create a new tag:"});
 </script>
