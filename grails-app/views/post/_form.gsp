@@ -61,44 +61,46 @@
 </div>
 
 <script type="text/javascript">
-    var opts = {
-        container: 'epiceditor',
-        textarea: 'content',
-        basePath: "${resource(dir: 'css/epiceditor')}",
-        clientSideStorage: false,
-        useNativeFullscreen: true,
-        file: {
-            name: 'epiceditor',
-            defaultContent: '',
-            autoSave: 100
-        },
-        theme: {
-            base: '/themes/base/epiceditor.css',
-            preview: '/themes/preview/github.css',
-            editor: '/themes/editor/epic-dark.css'
-        },
-        button: {
-            preview: true,
-            fullscreen: true,
-            bar: "auto"
-        },
-        focusOnLoad: false,
-        shortcut: {
-            modifier: 18,
-            fullscreen: 70,
-            preview: 80
-        },
-        string: {
-            togglePreview: 'Toggle Preview Mode',
-            toggleEdit: 'Toggle Edit Mode',
-            toggleFullscreen: 'Enter Fullscreen'
-        },
-        autogrow: {
-            minHeight: 200
+    jQuery(document).ready(function() {
+        var opts = {
+            container: 'epiceditor',
+            textarea: 'content',
+            basePath: "${resource(dir: 'css/epiceditor')}",
+            clientSideStorage: false,
+            useNativeFullscreen: true,
+            file: {
+                name: 'epiceditor',
+                defaultContent: '',
+                autoSave: 100
+            },
+            theme: {
+                base: '/themes/base/epiceditor.css',
+                preview: '/themes/preview/github.css',
+                editor: '/themes/editor/epic-dark.css'
+            },
+            button: {
+                preview: true,
+                fullscreen: true,
+                bar: "auto"
+            },
+            focusOnLoad: false,
+            shortcut: {
+                modifier: 18,
+                fullscreen: 70,
+                preview: 80
+            },
+            string: {
+                togglePreview: 'Toggle Preview Mode',
+                toggleEdit: 'Toggle Edit Mode',
+                toggleFullscreen: 'Enter Fullscreen'
+            },
+            autogrow: {
+                minHeight: 200
+            }
         }
-    }
 
-    var editor = new EpicEditor(opts).load();
-    jQuery("#categories").chosen({no_results_text: "Hit ENTER to create a new category:"});
-    jQuery("#tags").chosen({no_results_text: "Hit ENTER to create a new tag:"});
+        var editor = new EpicEditor(opts).load();
+        jQuery("#categories").chosen({no_results_text: "Hit ENTER to create a new category:"});
+        jQuery("#tags").chosen({no_results_text: "Hit ENTER to create a new tag:"});
+    });
 </script>
