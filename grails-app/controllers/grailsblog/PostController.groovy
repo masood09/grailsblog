@@ -118,7 +118,7 @@ class PostController {
         PostTag.removeAll(post)
 
         tags.each() {
-            tag = Tag.get(it)
+            tag = Tag.findByName(it) ?: new Tag(name: it).save(failOnError: true)
 
             if (!post.tags.contains(tag)) {
                PostTag.create post, tag
@@ -132,7 +132,7 @@ class PostController {
         PostCategory.removeAll(post)
 
         categories.each() {
-            category = Category.get(it)
+            category = Category.findByName(it) ?: new Category(name: it).save(failOnError: true)
 
             if (!post.categories.contains(category)) {
                PostCategory.create post, category

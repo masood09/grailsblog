@@ -16,10 +16,10 @@
     <select id="categories" name="categories" multiple data-placeholder="Choose categories" class="chosen-select form-control">
         <g:each in="${categories}" status="i" var="category">
         <g:if test="${postInstance.id}">
-            <option value="${category.id}" <g:if test="${postInstance.categories.contains(category)}">selected="selected"</g:if>>${category.name}</option>
+            <option value="${category.name}" <g:if test="${postInstance.categories.contains(category)}">selected="selected"</g:if>>${category.name}</option>
         </g:if>
         <g:else>
-            <option value="${category.id}">${category.name}</option>
+            <option value="${category.name}">${category.name}</option>
         </g:else>
         </g:each>
     </select>
@@ -30,10 +30,10 @@
     <select id="tags" name="tags" multiple data-placeholder="Choose tags" class="chosen-select form-control">
         <g:each in="${tags}" status="i" var="tag">
         <g:if test="${postInstance.id}">
-            <option value="${tag.id}" <g:if test="${postInstance.tags.contains(tag)}">selected="selected"</g:if>>${tag.name}</option>
+            <option value="${tag.name}" <g:if test="${postInstance.tags.contains(tag)}">selected="selected"</g:if>>${tag.name}</option>
         </g:if>
         <g:else>
-            <option value="${tag.id}">${tag.name}</option>
+            <option value="${tag.name}">${tag.name}</option>
         </g:else>
         </g:each>
     </select>
