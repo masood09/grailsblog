@@ -5,13 +5,6 @@
 </div>
 
 <div class="form-group">
-    <label for="content">Content <span class="required-indicator">*</span></label>
-    <textarea class="form-control hide" id="content" name="content" required="required">${postInstance?.content}</textarea>
-
-    <div id="epiceditor"></div>
-</div>
-
-<div class="form-group">
     <label for="categories">Categories</label>
     <select id="categories" name="categories" multiple data-placeholder="Choose categories" class="chosen-select form-control chosen-create-entry">
         <g:each in="${categories}" status="i" var="category">
@@ -39,6 +32,10 @@
     </select>
 </div>
 
+<ckeditor:editor name="content" height="400px" width="100%">
+${postInstance?.content}
+</ckeditor:editor>
+
 <div class="form-group">
     <g:if test="${postInstance.id}">
         <input type="hidden" name="author" value="${postInstance?.author.id}">
@@ -61,46 +58,6 @@
 </div>
 
 <script type="text/javascript">
-    jQuery(document).ready(function() {
-        var opts = {
-            container: 'epiceditor',
-            textarea: 'content',
-            basePath: "${resource(dir: 'css/epiceditor')}",
-            clientSideStorage: false,
-            useNativeFullscreen: true,
-            file: {
-                name: 'epiceditor',
-                defaultContent: '',
-                autoSave: 100
-            },
-            theme: {
-                base: '/themes/base/epiceditor.css',
-                preview: '/themes/preview/github.css',
-                editor: '/themes/editor/epic-dark.css'
-            },
-            button: {
-                preview: true,
-                fullscreen: true,
-                bar: "auto"
-            },
-            focusOnLoad: false,
-            shortcut: {
-                modifier: 18,
-                fullscreen: 70,
-                preview: 80
-            },
-            string: {
-                togglePreview: 'Toggle Preview Mode',
-                toggleEdit: 'Toggle Edit Mode',
-                toggleFullscreen: 'Enter Fullscreen'
-            },
-            autogrow: {
-                minHeight: 200
-            }
-        }
-
-        var editor = new EpicEditor(opts).load();
-        jQuery("#categories").chosen({no_results_text: "Hit ENTER to create a new category:"});
-        jQuery("#tags").chosen({no_results_text: "Hit ENTER to create a new tag:"});
-    });
+    jQuery("#categories").chosen({no_results_text: "Hit ENTER to create a new category:"});
+    jQuery("#tags").chosen({no_results_text: "Hit ENTER to create a new tag:"});
 </script>

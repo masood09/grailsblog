@@ -6,7 +6,8 @@
 
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'chosen.css')}" type="text/css">
 
-        <script src="${resource(dir: 'js', file: 'epiceditor.min.js')}"></script>
+        <ckeditor:resources/>
+
         <script src="${resource(dir: 'js', file: 'chosen.jquery.js')}"></script>
     </head>
     <body>

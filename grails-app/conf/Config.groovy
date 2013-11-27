@@ -131,7 +131,39 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
     '/secUser/**':                    ['ROLE_ADMIN'],
     '/category/**':                   ['ROLE_ADMIN', 'ROLE_AUTHOR'],
     '/tag/**':                        ['ROLE_ADMIN', 'ROLE_AUTHOR'],
-    '/post/**':                       ['ROLE_ADMIN', 'ROLE_AUTHOR']
+    '/post/**':                       ['ROLE_ADMIN', 'ROLE_AUTHOR'],
+    '/openFileManagerConnector/**':   ['ROLE_ADMIN', 'ROLE_AUTHOR']
 ]
 grails.plugin.springsecurity.userLookup.usernamePropertyName = 'email'
 grails.plugin.springsecurity.logout.postOnly = false
+
+ckeditor {
+    config = "/js/myckconfig.js"
+    skipAllowedItemsCheck = false
+    defaultFileBrowser = "ofm"
+    upload {
+        basedir = "/uploads/"
+            overwrite = false
+            link {
+                browser = false
+                upload = false
+                allowed = []
+                denied = ['html', 'htm', 'php', 'php2', 'php3', 'php4', 'php5',
+                          'phtml', 'pwml', 'inc', 'asp', 'aspx', 'ascx', 'jsp',
+                          'cfm', 'cfc', 'pl', 'bat', 'exe', 'com', 'dll', 'vbs', 'js', 'reg',
+                          'cgi', 'htaccess', 'asis', 'sh', 'shtml', 'shtm', 'phtm']
+            }
+            image {
+                browser = true
+                upload = true
+                allowed = ['jpg', 'gif', 'jpeg', 'png']
+                denied = []
+            }
+            flash {
+                browser = false
+                upload = false
+                allowed = ['swf']
+                denied = []
+            }
+    }
+}

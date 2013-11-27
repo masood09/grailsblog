@@ -46,6 +46,7 @@ stacktrace.log
 /target/
 /out/
 /web-app/plugins
+/web-app/uploads
 /web-app/WEB-INF/
 /.link_to_grails_plugins/
 /target-eclipse/
