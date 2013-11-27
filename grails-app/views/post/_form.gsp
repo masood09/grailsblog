@@ -32,9 +32,7 @@
     </select>
 </div>
 
-<ckeditor:editor name="content" height="400px" width="100%">
 ${postInstance?.content}
-</ckeditor:editor>
 
 <div class="form-group">
     <g:if test="${postInstance.id}">

@@ -6,8 +6,6 @@
 
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'chosen.css')}" type="text/css">
 
-        <ckeditor:resources/>
-
         <script src="${resource(dir: 'js', file: 'chosen.jquery.js')}"></script>
     </head>
     <body>
