@@ -77,6 +77,8 @@ class TagController {
             return
         }
 
+        PostTag.removeAll(tagInstance)
+
         tagInstance.delete flush:true
 
         request.withFormat {

@@ -12,6 +12,34 @@
 </div>
 
 <div class="form-group">
+    <label for="categories">Categories</label>
+    <select id="categories" name="categories" multiple class="form-control">
+        <g:each in="${categories}" status="i" var="category">
+        <g:if test="${postInstance.id}">
+            <option value="${category.id}" <g:if test="${postInstance.categories.contains(category)}">selected="selected"</g:if>>${category.name}</option>
+        </g:if>
+        <g:else>
+            <option value="${category.id}">${category.name}</option>
+        </g:else>
+        </g:each>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="tags">Tags</label>
+    <select id="tags" name="tags" multiple class="form-control">
+        <g:each in="${tags}" status="i" var="tag">
+        <g:if test="${postInstance.id}">
+            <option value="${tag.id}" <g:if test="${postInstance.tags.contains(tag)}">selected="selected"</g:if>>${tag.name}</option>
+        </g:if>
+        <g:else>
+            <option value="${tag.id}">${tag.name}</option>
+        </g:else>
+        </g:each>
+    </select>
+</div>
+
+<div class="form-group">
     <g:if test="${postInstance.id}">
         <input type="hidden" name="author" value="${postInstance?.author.id}">
         <button type="submit" class="btn btn-primary">

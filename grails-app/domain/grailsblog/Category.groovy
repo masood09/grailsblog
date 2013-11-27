@@ -12,6 +12,10 @@ class Category {
         name blank: false, nullable: false, unique: true
     }
 
+    Set<Post> getPosts() {
+        PostCategory.findAllByCategory(this).collect { it.post } as Set
+    }
+
     def beforeInsert() {
         this.slug = slugGeneratorService.generateSlug(this.class, "slug", name, true)
     }

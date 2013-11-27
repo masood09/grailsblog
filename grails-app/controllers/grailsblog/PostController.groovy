@@ -31,7 +31,7 @@ class PostController {
     }
 
     def create() {
-        respond new Post(params), model:[currentUser: springSecurityService.getCurrentUser()]
+        respond new Post(params), model:[currentUser: springSecurityService.getCurrentUser(), categories: Category.findAll(), tags: Tag.findAll()]
     }
 
     @Transactional
@@ -48,6 +48,9 @@ class PostController {
 
         postInstance.save flush:true
 
+        associatePostsWithCategories(postInstance, params.list("categories"))
+        associatePostsWithTags(postInstance, params.list("tags"))
+
         request.withFormat {
             form {
                 flash.message = message(code: 'default.created.message', args: [message(code: 'postInstance.label', default: 'Post'), postInstance.title])
@@ -58,7 +61,7 @@ class PostController {
     }
 
     def edit(Post postInstance) {
-        respond postInstance
+        respond postInstance, model:[categories: Category.findAll(), tags: Tag.findAll()]
     }
 
     @Transactional
@@ -74,6 +77,9 @@ class PostController {
         }
 
         postInstance.save flush:true
+
+        associatePostsWithCategories(postInstance, params.list("categories"))
+        associatePostsWithTags(postInstance, params.list("tags"))
 
         request.withFormat {
             form {
@@ -92,6 +98,9 @@ class PostController {
             return
         }
 
+        PostCategory.removeAll(postInstance)
+        PostTag.removeAll(postInstance)
+
         postInstance.delete flush:true
 
         request.withFormat {
@@ -100,6 +109,34 @@ class PostController {
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
+        }
+    }
+
+    protected void associatePostsWithTags(Post post, tags) {
+        def tag
+
+        PostTag.removeAll(post)
+
+        tags.each() {
+            tag = Tag.get(it)
+
+            if (!post.tags.contains(tag)) {
+               PostTag.create post, tag
+            }
+        }
+    }
+
+    protected void associatePostsWithCategories(Post post, categories) {
+        def category
+
+        PostCategory.removeAll(post)
+
+        categories.each() {
+            category = Category.get(it)
+
+            if (!post.categories.contains(category)) {
+               PostCategory.create post, category
+            }
         }
     }
 

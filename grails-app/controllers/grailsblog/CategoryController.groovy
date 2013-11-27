@@ -77,6 +77,8 @@ class CategoryController {
             return
         }
 
+        PostCategory.removeAll(categoryInstance)
+
         categoryInstance.delete flush:true
 
         request.withFormat {

@@ -20,6 +20,14 @@ class Post {
         content sqlType: 'text'
     }
 
+    Set<Category> getCategories() {
+        PostCategory.findAllByPost(this).collect { it.category } as Set
+    }
+
+    Set<Tag> getTags() {
+        PostTag.findAllByPost(this).collect { it.tag } as Set
+    }
+
     def beforeInsert() {
         this.slug = slugGeneratorService.generateSlug(this.class, "slug", title, true)
     }
