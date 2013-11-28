@@ -48,7 +48,7 @@
                                         ${fieldValue(bean: secUserInstance, field: "email")}
                                     </td>
                                     <td>
-                                        <g:formatBoolean boolean="${secUserInstance.enabled}" />
+                                        <g:formatBoolean boolean="${secUserInstance.enabled}" true="Yes" false="No" />
                                     </td>
                                     <td>
                                         <g:link action="edit" id="${secUserInstance.id}">
