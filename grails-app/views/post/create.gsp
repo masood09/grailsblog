@@ -6,7 +6,7 @@
 
         <link rel="stylesheet" href="${resource(dir: 'css', file: 'chosen.css')}" type="text/css">
 
-        <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+        <script type="text/javascript" src="${resource(dir: 'js/tinymce/', file: 'tinymce.min.js')}"></script>
         <script src="${resource(dir: 'js', file: 'chosen.jquery.js')}"></script>
     </head>
     <body>
