@@ -70,12 +70,11 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
-        test("org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion")
-
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
         runtime "postgresql:postgresql:$postgresqlVersion"
 
+        test "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
         test "org.gebish:geb-spock:$gebVersion"
     }
 
