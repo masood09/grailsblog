@@ -3,7 +3,7 @@ import spock.lang.*
 import pages.*
 
 @Stepwise
-class AdminPostSpec extends GebReportingSpec {
+class PostSpec extends GebReportingSpec {
     def setupSpec() {
         to LogoutPage
     }
