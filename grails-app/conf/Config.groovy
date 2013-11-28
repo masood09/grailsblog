@@ -136,6 +136,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 ]
 grails.plugin.springsecurity.userLookup.usernamePropertyName = 'email'
 grails.plugin.springsecurity.logout.postOnly = false
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/admin/posts'
 
 ckeditor {
     config = "/js/myckconfig.js"
