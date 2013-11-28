@@ -63,7 +63,7 @@ class CategoryController {
         request.withFormat {
             form {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Category.label', default: 'Category'), categoryInstance.name])
-                rredirect action: "index", method: "GET"
+                redirect action: "index", method: "GET"
             }
             '*'{ respond categoryInstance, [status: OK] }
         }
