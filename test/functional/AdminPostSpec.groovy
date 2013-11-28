@@ -4,6 +4,14 @@ import pages.*
 
 @Stepwise
 class AdminPostSpec extends GebReportingSpec {
+    def setupSpec() {
+        to LogoutPage
+    }
+
+    def cleanupSpec() {
+        to LogoutPage
+    }
+
     def "Test blog post index page"() {
         given: "I am at login page"
         to LoginPage

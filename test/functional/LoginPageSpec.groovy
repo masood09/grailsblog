@@ -4,6 +4,10 @@ import pages.*
 
 @Stepwise
 class LoginPageSpec extends GebReportingSpec {
+    def setupSpec() {
+        to LogoutPage
+    }
+
     def "visit login page"() {
         when:
         to LoginPage
