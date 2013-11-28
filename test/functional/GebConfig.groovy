@@ -17,11 +17,53 @@ environments {
     }
 
     // run as "grails -Dgeb.env=xpie8 test-app"
-    xpie8 {
+    travisxpie8 {
         driver = {
             DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
             capabilities.setCapability("version", "8")
             capabilities.setCapability("platform", "Windows XP")
+            capabilities.setCapability("tunnel-identifier", System.env.TRAVIS_JOB_NUMBER)
+
+            new RemoteWebDriver(
+                new URL("http://masood09:a677f19e-8103-4576-8ab8-71c0dbfe29c2@ondemand.saucelabs.com/wd/hub"), capabilities
+            )
+        }
+    }
+
+    // run as "grails -Dgeb.env=win7ie8 test-app"
+    traviswin7ie8 {
+        driver = {
+            DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
+            capabilities.setCapability("version", "8")
+            capabilities.setCapability("platform", "Windows 7")
+            capabilities.setCapability("tunnel-identifier", System.env.TRAVIS_JOB_NUMBER)
+
+            new RemoteWebDriver(
+                new URL("http://masood09:a677f19e-8103-4576-8ab8-71c0dbfe29c2@ondemand.saucelabs.com/wd/hub"), capabilities
+            )
+        }
+    }
+
+    // run as "grails -Dgeb.env=win7ie9 test-app"
+    traviswin7ie9 {
+        driver = {
+            DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
+            capabilities.setCapability("version", "9")
+            capabilities.setCapability("platform", "Windows 7")
+            capabilities.setCapability("tunnel-identifier", System.env.TRAVIS_JOB_NUMBER)
+
+            new RemoteWebDriver(
+                new URL("http://masood09:a677f19e-8103-4576-8ab8-71c0dbfe29c2@ondemand.saucelabs.com/wd/hub"), capabilities
+            )
+        }
+    }
+
+    // run as "grails -Dgeb.env=win7ie10 test-app"
+    traviswin7ie10 {
+        driver = {
+            DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
+            capabilities.setCapability("version", "10")
+            capabilities.setCapability("platform", "Windows 7")
             capabilities.setCapability("tunnel-identifier", System.env.TRAVIS_JOB_NUMBER)
 
             new RemoteWebDriver(
