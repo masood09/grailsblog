@@ -24,7 +24,7 @@
             <script src="${resource(dir: 'js', file: 'html5shiv.js')}"></script>
         <![endif]-->
 
-        <script src="${resource(dir: 'js', file: 'jquery-1.10.2.js')}"></script>
+        <script src="${resource(dir: 'js', file: 'jquery-1.10.2.min.js')}"></script>
 
         <g:layoutHead/>
         <r:layoutResources />
