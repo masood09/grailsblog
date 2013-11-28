@@ -15,6 +15,11 @@ hibernate {
 environments {
     development {
         dataSource {
+            // driverClassName = "com.mysql.jdbc.Driver"
+            // username = "grails"
+            // password = "123456"
+            // dbCreate = "update"
+            // url = "jdbc:mysql://localhost:3306/grailsblog_dev?autoreconnect=true"
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:h2:mem:devDb;MVCC=TRUE;LOCK_TIMEOUT=10000"
         }
