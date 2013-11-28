@@ -33,8 +33,22 @@ grails.project.dependency.resolution = {
     checksums true // Whether to verify checksums on resolve
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
+    def mysqlConnectorJavaVersion = "5.1.24"
+    def postgresqlVersion = "8.4-702.jdbc3"
     def gebVersion = "0.9.2"
     def seleniumVersion = "2.37.0"
+    def tomcatVersion = "7.0.42"
+    def scaffoldingVersion = "2.0.1"
+    def cacheVersion = "1.1.1"
+    def springSecurityCoreVersion = "2.0-RC2"
+    def hibernateVersion = "3.6.10.2"
+    def hibernate4Version = "4.1.11.2"
+    def databaseMigrationVersion = "1.3.5"
+    def jqueryVersion = "1.10.2"
+    def resourcesVersion = "1.2.1"
+    def zippedResourcesVersion = "1.0.1"
+    def cachedResourcesVersion = "1.1"
+    def yuiMinifyResourcesVersion = "0.1.5"
 
     repositories {
         inherits true // Whether to inherit repository definitions from plugins
@@ -58,31 +72,31 @@ grails.project.dependency.resolution = {
         test("org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion")
 
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
-        // runtime 'mysql:mysql-connector-java:5.1.24'
-        runtime 'postgresql:postgresql:8.4-702.jdbc3'
+        // runtime "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
+        runtime "postgresql:postgresql:$postgresqlVersion"
 
         test "org.gebish:geb-spock:$gebVersion"
     }
 
     plugins {
         // plugins for the build system only
-        build ":tomcat:7.0.42"
+        build ":tomcat:$tomcatVersion"
 
         // plugins for the compile step
-        compile ":scaffolding:2.0.1"
-        compile ':cache:1.1.1'
-        compile ':spring-security-core:2.0-RC2'
+        compile ":scaffolding:$scaffoldingVersion"
+        compile ":cache:$cacheVersion"
+        compile ":spring-security-core:$springSecurityCoreVersion"
         compile ":slug-generator:0.3.1"
 
         // plugins needed at runtime but not for compilation
-        runtime ":hibernate:3.6.10.2" // or ":hibernate4:4.1.11.2"
-        // runtime ":database-migration:1.3.5"
-        runtime ":jquery:1.10.2"
-        runtime ":resources:1.2.1"
+        runtime ":hibernate:$hibernateVersion" // or ":hibernate4:$hibernate4Version"
+        // runtime ":database-migration:$databaseMigrationVersion"
+        runtime ":jquery:$jqueryVersion"
+        runtime ":resources:$resourcesVersion"
         // Uncomment these (or add new ones) to enable additional resources capabilities
-        //runtime ":zipped-resources:1.0.1"
-        //runtime ":cached-resources:1.1"
-        //runtime ":yui-minify-resources:0.1.5"
+        //runtime ":zipped-resources:$zippedResourcesVersion"
+        //runtime ":cached-resources:$cachedResourcesVersion"
+        //runtime ":yui-minify-resources:$yuiMinifyResourcesVersion"
 
         test ":geb:$gebVersion"
     }
