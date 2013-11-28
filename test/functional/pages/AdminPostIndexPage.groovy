@@ -22,8 +22,7 @@ class PostRow extends Module {
         cellText { cell(it).text() }
         title { cellText(0) }
         author(required: false) { cellText(1) }
-        published(required: false) { cellText(2) }
-        slug(required: false) { cellText(3) }
+        slug(required: false) { cellText(2) }
         editLink(to: AdminPostEditPage) { cell(0).find("a") }
     }
 }

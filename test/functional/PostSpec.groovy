@@ -49,7 +49,6 @@ class PostSpec extends GebReportingSpec {
         postRows.size() == 1
         postRow(0).title == "This is a test title"
         postRow(0).author == "Admin User"
-        postRow(0).published == "Not Published"
         postRow(0).slug == "this-is-a-test-title"
     }
 
@@ -63,7 +62,6 @@ class PostSpec extends GebReportingSpec {
 
         when: "I change the title and publish the post"
         $("form").title = "This is a test title edit"
-        $("#published").click()
         updatePostButton.click()
 
         then: "I should be at post index page"
@@ -72,7 +70,6 @@ class PostSpec extends GebReportingSpec {
         postRows.size() == 1
         postRow(0).title == "This is a test title edit"
         postRow(0).author == "Admin User"
-        postRow(0).published == "Published"
         postRow(0).slug == "this-is-a-test-title-edit"
     }
 

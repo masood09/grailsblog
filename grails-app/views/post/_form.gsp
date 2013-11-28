@@ -4,19 +4,6 @@
     <input type="text" class="form-control" id="title" name="title" placeholder="Enter post title" value="${postInstance?.title}" required="">
 </div>
 
-<div class="form-group">
-    <label for="published">
-        Should be published?
-        &nbsp;
-        <g:if test="${postInstance.id}">
-            <g:checkBox name="published" value="${postInstance?.published}" />
-        </g:if>
-        <g:else>
-            <g:checkBox name="published" value="false" />
-        </g:else>
-    </label>
-</div>
-
 <hr>
 
 <div class="form-group">

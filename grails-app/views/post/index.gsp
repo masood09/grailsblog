@@ -34,7 +34,6 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Author</th>
-                                <th>Published</th>
                                 <th>Slug</th>
                             </tr>
                         </thead>
@@ -50,16 +49,13 @@
                                         ${postInstance.author.fullname}
                                     </td>
                                     <td>
-                                        <g:formatBoolean boolean="${postInstance.published}" true="Published" false="Not Published" />
-                                    </td>
-                                    <td>
                                         ${postInstance.slug}
                                     </td>
                                 </tr>
                             </g:each>
                             <g:unless test="${postInstanceList}">
                                 <tr>
-                                    <td colspan="4">
+                                    <td colspan="3">
                                         <p class="noRecord">No Posts Found!</p>
                                     </td>
                                 </tr>
