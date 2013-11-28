@@ -19,4 +19,4 @@ before_install:
     - "sh -e /etc/init.d/xvfb start"
 
 script: ./grailsw refresh-dependencies
-    && ./grailsw -Dgeb.env=traviswin7ie8 test-app
+    && ./grailsw -Dgeb.env=traviswin7ie9 test-app
