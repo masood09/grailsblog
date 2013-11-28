@@ -24,6 +24,6 @@ class PostRow extends Module {
         author(required: false) { cellText(1) }
         published(required: false) { cellText(2) }
         slug(required: false) { cellText(3) }
-        editLink { cell(0).find("a") }
+        editLink(to: AdminPostEditPage) { cell(0).find("a") }
     }
 }

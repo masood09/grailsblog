@@ -52,4 +52,48 @@ class AdminPostSpec extends GebReportingSpec {
         postRow(0).published == "Not Published"
         postRow(0).slug == "this-is-a-test-title"
     }
+
+    def "edit a post"() {
+        when: "I click on post title"
+        postRow(0).editLink.click()
+
+        then: "I should be at post edit page"
+        at AdminPostEditPage
+        $("form").title == "This is a test title"
+
+        when: "I change the title and publish the post"
+        $("form").title = "This is a test title edit"
+        $("#published").click()
+        updatePostButton.click()
+
+        then: "I should be at post index page"
+        at AdminPostIndexPage
+        infoMessage == "Post This is a test title edit updated"
+        postRows.size() == 1
+        postRow(0).title == "This is a test title edit"
+        postRow(0).author == "Admin User"
+        postRow(0).published == "Published"
+        postRow(0).slug == "this-is-a-test-title-edit"
+    }
+
+    def "delete a post"() {
+        given:
+        def postTitle = postRow(0).title
+
+        when: "I click on post title"
+        postRow(0).editLink.click()
+
+        then: "I should be at post edit page"
+        at AdminPostEditPage
+        $("form").title == "This is a test title edit"
+
+        when: "I click on delete post link"
+        withConfirm { deletePostButton.click() }
+
+        then: "I should be at the post index page"
+        at AdminPostIndexPage
+        infoMessage == "Post $postTitle deleted"
+        postRows.size() == 1
+        postRow(0).title == "No Posts Found!"
+    }
 }
