@@ -55,7 +55,6 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
-        test("org.seleniumhq.selenium:selenium-chrome-driver:$seleniumVersion")
         test("org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion")
 
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
