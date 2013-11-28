@@ -18,5 +18,6 @@ class UrlMappings {
 
         "/"(view:"/index")
         "500"(view:'/error')
+        "/admin"(controller: "post", action: "index")
     }
 }
