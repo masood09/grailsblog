@@ -24,6 +24,8 @@ class AdminPostSpec extends GebReportingSpec {
 
         then: "I am at admin posts section"
         at AdminPostIndexPage
+        postRows.size() == 1
+        postRow(0).title == "No Posts Found!"
     }
 
     def "Test creation of new post"() {
@@ -44,5 +46,10 @@ class AdminPostSpec extends GebReportingSpec {
         then: "I should be at post index page"
         at AdminPostIndexPage
         infoMessage == "Post This is a test title created"
+        postRows.size() == 1
+        postRow(0).title == "This is a test title"
+        postRow(0).author == "Admin User"
+        postRow(0).published == "Not Published"
+        postRow(0).slug == "this-is-a-test-title"
     }
 }
