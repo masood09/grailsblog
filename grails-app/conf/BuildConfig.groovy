@@ -41,6 +41,7 @@ grails.project.dependency.resolution = {
     def scaffoldingVersion = "2.0.1"
     def cacheVersion = "1.1.1"
     def springSecurityCoreVersion = "2.0-RC2"
+    def slugGeneratorVersion = "0.3.1"
     def hibernateVersion = "3.6.10.2"
     def hibernate4Version = "4.1.11.2"
     def databaseMigrationVersion = "1.3.5"
@@ -86,7 +87,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:$scaffoldingVersion"
         compile ":cache:$cacheVersion"
         compile ":spring-security-core:$springSecurityCoreVersion"
-        compile ":slug-generator:0.3.1"
+        compile ":slug-generator:$slugGeneratorVersion"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:$hibernateVersion" // or ":hibernate4:$hibernate4Version"
