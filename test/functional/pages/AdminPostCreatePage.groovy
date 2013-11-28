@@ -10,6 +10,5 @@ class AdminPostCreatePage extends ScaffoldPage {
 
     static content = {
         createPostButton { $("button.btn.btn-primary") }
-        tinyMceFrame { $("#content_ifr") }
     }
 }
