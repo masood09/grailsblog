@@ -7,8 +7,8 @@ addons:
 
 jdk:
     - oraclejdk7
-    # - openjdk7
-    # - openjdk6
+    - openjdk7
+    - openjdk6
 
 branches:
     only:
@@ -19,10 +19,4 @@ before_install:
     - "sh -e /etc/init.d/xvfb start"
 
 script: ./grailsw refresh-dependencies
-    && ./grailsw test-app
-    && ./grailsw -Dgeb.env=win7ie10 test-app
-    && ./grailsw -Dgeb.env=win7ie9 test-app
-    && ./grailsw -Dgeb.env=win7ie8 test-app
     && ./grailsw -Dgeb.env=xpie8 test-app
-    && ./grailsw -Dgeb.env=xpie7 test-app
-    && ./grailsw -Dgeb.env=xpie6 test-app

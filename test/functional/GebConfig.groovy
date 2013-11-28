@@ -22,74 +22,10 @@ environments {
             DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
             capabilities.setCapability("version", "8")
             capabilities.setCapability("platform", "Windows XP")
+            capabilities.setCapability("tunnel-identifier", System.env.TRAVIS_JOB_NUMBER)
 
             new RemoteWebDriver(
-                new URL("http://masood09@a677f19e-8103-4576-8ab8-71c0dbfe29c2@localhost:4445/wd/hub"), capabilities
-            )
-        }
-    }
-
-    // run as "grails -Dgeb.env=xpie7 test-app"
-    xpie7 {
-        driver = {
-            DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
-            capabilities.setCapability("version", "7")
-            capabilities.setCapability("platform", "Windows XP")
-
-            new RemoteWebDriver(
-                new URL("http://masood09@a677f19e-8103-4576-8ab8-71c0dbfe29c2@localhost:4445/wd/hub"), capabilities
-            )
-        }
-    }
-
-    // run as "grails -Dgeb.env=xpie6 test-app"
-    xpie6 {
-        driver = {
-            DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
-            capabilities.setCapability("version", "6")
-            capabilities.setCapability("platform", "Windows XP")
-
-            new RemoteWebDriver(
-                new URL("http://masood09@a677f19e-8103-4576-8ab8-71c0dbfe29c2@localhost:4445/wd/hub"), capabilities
-            )
-        }
-    }
-
-    // run as "grails -Dgeb.env=win7ie8 test-app"
-    win7ie8 {
-        driver = {
-            DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
-            capabilities.setCapability("version", "8")
-            capabilities.setCapability("platform", "Windows 7")
-
-            new RemoteWebDriver(
-                new URL("http://masood09@a677f19e-8103-4576-8ab8-71c0dbfe29c2@localhost:4445/wd/hub"), capabilities
-            )
-        }
-    }
-
-    // run as "grails -Dgeb.env=win7ie9 test-app"
-    win7ie9 {
-        driver = {
-            DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
-            capabilities.setCapability("version", "9")
-            capabilities.setCapability("platform", "Windows 7")
-
-            new RemoteWebDriver(
-                new URL("http://masood09@a677f19e-8103-4576-8ab8-71c0dbfe29c2@localhost:4445/wd/hub"), capabilities
-            )
-        }
-    }
-
-    // run as "grails -Dgeb.env=win7ie10 test-app"
-    win7ie10 {
-        driver = {
-            DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer()
-            capabilities.setCapability("version", "10")
-            capabilities.setCapability("platform", "Windows 7")
-
-            new RemoteWebDriver(
-                new URL("http://masood09@a677f19e-8103-4576-8ab8-71c0dbfe29c2@localhost:4445/wd/hub"), capabilities
+                new URL("http://masood09:a677f19e-8103-4576-8ab8-71c0dbfe29c2@localhost:4455/wd/hub"), capabilities
             )
         }
     }
