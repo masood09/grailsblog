@@ -24,10 +24,10 @@
             <script src="${resource(dir: 'js', file: 'html5shiv.js')}"></script>
         <![endif]-->
 
+        <g:javascript library="jquery" />
+
         <g:layoutHead/>
         <r:layoutResources />
-
-        <script src="${resource(dir: 'js', file: 'jquery-1.10.2.js')}"></script>
     </head>
 
     <body>
