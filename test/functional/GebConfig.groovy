@@ -25,7 +25,7 @@ environments {
             capabilities.setCapability("tunnel-identifier", System.env.TRAVIS_JOB_NUMBER)
 
             new RemoteWebDriver(
-                new URL("http://masood09:a677f19e-8103-4576-8ab8-71c0dbfe29c2@localhost:4455/wd/hub"), capabilities
+                new URL("http://masood09:a677f19e-8103-4576-8ab8-71c0dbfe29c2@ondemand.saucelabs.com/wd/hub"), capabilities
             )
         }
     }
