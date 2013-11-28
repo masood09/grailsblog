@@ -45,11 +45,6 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li>
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i> Dashboard
-                            </a>
-                        </li>
-                        <li>
                             <g:link controller="post" action="index">
                                 <i class="fa fa-files-o"></i> Posts
                             </g:link>
