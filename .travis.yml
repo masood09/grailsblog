@@ -21,4 +21,3 @@ before_install:
 script: ./grailsw refresh-dependencies
     && ./grailsw test-app
     && ./grailsw -Dgeb.env=traviswin7ie9 test-app
-    && ./grailsw -Dgeb.env=traviswin7ie10 test-app
