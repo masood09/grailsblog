@@ -5,6 +5,16 @@
 </div>
 
 <div class="form-group">
+    <label for="published">
+        Should be published?
+        &nbsp;&nbsp;
+        <g:checkBox name="published" value="${postInstance?.published}" />
+    </label>
+</div>
+
+<hr>
+
+<div class="form-group">
     <label for="categories">Categories</label>
     <select id="categories" name="categories" multiple data-placeholder="Choose categories" class="chosen-select form-control chosen-create-entry">
         <g:each in="${categories}" status="i" var="category">

@@ -34,6 +34,7 @@
                             <tr>
                                 <th>Title</th>
                                 <th>Author</th>
+                                <th>Published</th>
                                 <th>Slug</th>
                             </tr>
                         </thead>
@@ -47,6 +48,9 @@
                                     </td>
                                     <td>
                                         ${postInstance.author.fullname}
+                                    </td>
+                                    <td>
+                                        <g:formatBoolean boolean="${postInstance.published}" true="Published" false="Not Published" />
                                     </td>
                                     <td>
                                         ${postInstance.slug}

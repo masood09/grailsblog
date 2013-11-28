@@ -6,6 +6,7 @@ class Post {
     String title
     String slug = ""
     String content
+    Boolean published = false
     Date dateCreated
     Date lastUpdated
 
