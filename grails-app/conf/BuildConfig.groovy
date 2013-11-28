@@ -77,6 +77,7 @@ grails.project.dependency.resolution = {
         runtime "org.postgresql:postgresql:jar:$postgresqlOrgVersion"
 
         test "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
+        test "org.seleniumhq.selenium:selenium-remote-driver:$seleniumVersion"
         test "org.gebish:geb-spock:$gebVersion"
     }
 

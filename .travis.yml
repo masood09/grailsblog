@@ -1,5 +1,10 @@
 language: groovy
 
+addons:
+    sauce_connect:
+        username: "masood09"
+        access_key: "a677f19e-8103-4576-8ab8-71c0dbfe29c2"
+
 jdk:
     - oraclejdk7
     # - openjdk7
@@ -15,3 +20,9 @@ before_install:
 
 script: ./grailsw refresh-dependencies
     && ./grailsw test-app
+    && ./grailsw -Dgeb.env=win7ie10 test-app
+    && ./grailsw -Dgeb.env=win7ie9 test-app
+    && ./grailsw -Dgeb.env=win7ie8 test-app
+    && ./grailsw -Dgeb.env=xpie8 test-app
+    && ./grailsw -Dgeb.env=xpie7 test-app
+    && ./grailsw -Dgeb.env=xpie6 test-app
