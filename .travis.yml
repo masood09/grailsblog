@@ -1,9 +1,9 @@
 language: groovy
 
-addons:
-    sauce_connect:
-        username: "masood09"
-        access_key: "a677f19e-8103-4576-8ab8-71c0dbfe29c2"
+# addons:
+    # sauce_connect:
+        # username: "masood09"
+        # access_key: "a677f19e-8103-4576-8ab8-71c0dbfe29c2"
 
 jdk:
     - oraclejdk7
