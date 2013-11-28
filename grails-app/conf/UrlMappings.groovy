@@ -2,13 +2,13 @@ class UrlMappings {
 
     static mappings = {
         "/admin/users"(controller: "SecUser", action: "index")
-        "/admin/users"(resources: 'secUser', excludes: ['show'])
+        "/admin/users"(resources: "secUser", excludes: ["index", "show"])
         "/admin/category"(controller: "category", action: "index")
-        "/admin/category"(resources: 'category', excludes: ['show'])
+        "/admin/category"(resources: "category", excludes: ["index", "show"])
         "/admin/tags"(controller: "tag", action: "index")
-        "/admin/tags"(resources: 'tag', excludes: ['show'])
+        "/admin/tags"(resources: "tag", excludes: ["index", "show"])
         "/admin/posts"(controller: "post", action: "index")
-        "/admin/posts"(resources: "post", excludes: ["show"])
+        "/admin/posts"(resources: "post", excludes: ["index", "show"])
 
         "/$controller/$action?/$id?(.${format})?"{
             constraints {
