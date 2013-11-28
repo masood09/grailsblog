@@ -7,8 +7,13 @@
 <div class="form-group">
     <label for="published">
         Should be published?
-        &nbsp;&nbsp;
-        <g:checkBox name="published" value="${postInstance?.published}" />
+        &nbsp;
+        <g:if test="${postInstance.id}">
+            <g:checkBox name="published" value="${postInstance?.published}" />
+        </g:if>
+        <g:else>
+            <g:checkBox name="published" value="false" />
+        </g:else>
     </label>
 </div>
 
