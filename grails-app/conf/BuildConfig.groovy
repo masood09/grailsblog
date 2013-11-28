@@ -93,7 +93,7 @@ grails.project.dependency.resolution = {
         // plugins needed at runtime but not for compilation
         runtime ":hibernate:$hibernateVersion" // or ":hibernate4:$hibernate4Version"
         // runtime ":database-migration:$databaseMigrationVersion"
-        runtime ":jquery:$jqueryVersion"
+        // runtime ":jquery:$jqueryVersion"
         runtime ":resources:$resourcesVersion"
         // Uncomment these (or add new ones) to enable additional resources capabilities
         //runtime ":zipped-resources:$zippedResourcesVersion"
