@@ -59,7 +59,7 @@
                             </g:each>
                             <g:unless test="${postInstanceList}">
                                 <tr>
-                                    <td colspan="3">
+                                    <td colspan="4">
                                         <p class="noRecord">No Posts Found!</p>
                                     </td>
                                 </tr>
