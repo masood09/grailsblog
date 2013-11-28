@@ -35,6 +35,7 @@ grails.project.dependency.resolution = {
 
     def mysqlConnectorJavaVersion = "5.1.27"
     def postgresqlVersion = "9.1-901.jdbc4"
+    def postgresqlOrgVersion = "9.3-1100-jdbc41"
     def gebVersion = "0.9.2"
     def seleniumVersion = "2.37.0"
     def tomcatVersion = "7.0.47"
@@ -72,7 +73,8 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
         // runtime "mysql:mysql-connector-java:$mysqlConnectorJavaVersion"
-        runtime "postgresql:postgresql:$postgresqlVersion"
+        // runtime "postgresql:postgresql:$postgresqlVersion"
+        runtime "org.postgresql:postgresql:jar:$postgresqlOrgVersion"
 
         test "org.seleniumhq.selenium:selenium-firefox-driver:$seleniumVersion"
         test "org.gebish:geb-spock:$gebVersion"
