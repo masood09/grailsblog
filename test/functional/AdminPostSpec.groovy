@@ -24,5 +24,17 @@ class AdminPostSpec extends GebReportingSpec {
 
         then: "I am at Create a new post page"
         at AdminPostCreatePage
+
+        when: "I enter title and content"
+        $("form").title = "This is a test title"
+        js.exec 1, 2, """
+            tinyMCE.execCommand('mceInsertContent', false, 'This is a test content');
+            return true;
+        """
+        createPostButton.click()
+
+        then: "I should be at post index page"
+        at AdminPostIndexPage
+        infoMessage == "Post This is a test title created"
     }
 }
