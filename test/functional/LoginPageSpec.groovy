@@ -28,4 +28,17 @@ class LoginPageSpec extends GebReportingSpec {
         errorMessage == "Sorry, we were not able to find a user with that username and password."
         assert page instanceof LoginPage
     }
+
+    def "when correct username and password is entered"() {
+        given:
+        at LoginPage
+
+        when:
+        $("#loginForm").j_username = 'admin@example.com'
+        $("#loginForm").j_password = '123456'
+        loginButton.click()
+
+        then:
+        at AdminPostIndexPage
+    }
 }
