@@ -71,7 +71,6 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.0.1"
         compile ':cache:1.1.1'
-        compile ":markdown:1.1.1"
         compile ':spring-security-core:2.0-RC2'
         compile ":slug-generator:0.3.1"
 
