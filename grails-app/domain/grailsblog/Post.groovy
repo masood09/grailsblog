@@ -6,8 +6,6 @@ class Post {
     String title
     String slug = ""
     String content
-    String monthCreated = ""
-    String yearCreated = ""
     Date dateCreated
     Date lastUpdated
 
@@ -32,10 +30,6 @@ class Post {
 
     def beforeInsert() {
         this.slug = slugGeneratorService.generateSlug(this.class, "slug", title, true)
-
-        Date currentDate = new Date()
-        this.monthCreated = currentDate.format("MM");
-        this.yearCreated = currentDate.format("yyyy");
     }
 
     def beforeUpdate() {
