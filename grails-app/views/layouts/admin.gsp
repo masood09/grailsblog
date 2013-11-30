@@ -39,7 +39,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">GrailsBlog</a>
+                    <a class="navbar-brand" href="${ createLink(controller: "post", action: "index") }">GrailsBlog</a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -64,29 +64,13 @@
                                 <i class="fa fa-user"></i> Users
                             </g:link>
                         </li>
-                        <li>
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i> Settings
-                            </a>
-                        </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right navbar-user">
-                        <li class="dropdown user-dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <sec:loggedInUserInfo field="username"/> <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-user"></i> Profile
-                                    </a>
-                                </li>
-                                <li class="divider"></li>
-                                <li>
-                                    <g:link controller="logout" action="index">
-                                        <i class="fa fa-power-off"></i> Log Out
-                                    </g:link>
-                                </li>
-                            </ul>
+                        <li>
+                            <g:link controller="logout" action="index">
+                                <i class="fa fa-user"></i> Log Out
+                            </g:link>
                         </li>
                     </ul>
                 </div>
