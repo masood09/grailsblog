@@ -90,6 +90,19 @@ class TagController {
         }
     }
 
+    def list(String slug) {
+        def tag = Tag.findBySlug(slug)
+
+        if (tag == null) {
+            notFound()
+            return
+        }
+
+        def postInstaceList = tag.getPosts()
+
+        respond postInstaceList, model:[categories: Category.findAll(), tags: Tag.findAll(), tagInstance: tag, postInstaceList: postInstaceList]
+    }
+
     protected void notFound() {
         request.withFormat {
             form {

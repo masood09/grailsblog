@@ -112,6 +112,25 @@ class PostController {
         }
     }
 
+    def list(Integer max) {
+        params.max = Math.min(max ?: 10, 100)
+        params.sort = "dateCreated"
+        params.order = "desc"
+
+        respond Post.list(params), model:[postInstanceCount: Post.count(), categories: Category.findAll(), tags: Tag.findAll()]
+    }
+
+    def show(String slug) {
+        def postInstance = Post.findBySlug(slug)
+
+        if (postInstance == null) {
+            notFound()
+            return
+        }
+
+        respond postInstance, model:[categories: Category.findAll(), tags: Tag.findAll()]
+    }
+
     protected void associatePostsWithTags(Post post, tags) {
         def tag
 

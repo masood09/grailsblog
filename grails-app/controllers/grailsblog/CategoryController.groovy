@@ -90,6 +90,19 @@ class CategoryController {
         }
     }
 
+    def list(String slug) {
+        def category = Category.findBySlug(slug)
+
+        if (category == null) {
+            notFound()
+            return
+        }
+
+        def postInstaceList = category.getPosts()
+
+        respond postInstaceList, model:[categories: Category.findAll(), tags: Tag.findAll(), categoryInstance: category, postInstaceList: postInstaceList]
+    }
+
     protected void notFound() {
         request.withFormat {
             form {

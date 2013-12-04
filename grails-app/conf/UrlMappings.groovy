@@ -16,7 +16,13 @@ class UrlMappings {
             }
         }
 
-        "/"(view:"/index")
+        "/"(controller: "post", action: "list")
+        "/posts"(controller: "post", action: "list")
+        "/posts/$slug"(controller: "post", action: "show")
+
+        "/category/$slug"(controller: "category", action: "list")
+        "/tag/$slug"(controller: "tag", action: "list")
+
         "500"(view:'/error')
         "/admin"(controller: "post", action: "index")
     }
