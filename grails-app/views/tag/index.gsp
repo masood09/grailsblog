@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="pagination">
-                    <g:paginate total="${tagInstanceCount ?: 0}" />
+                    <g:paginate total="${tagInstanceCount ?: 0}" controller="tag" action="index" />
                 </div>
             </div>
         </div>

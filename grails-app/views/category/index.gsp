@@ -61,7 +61,7 @@
                 </div>
 
                 <div class="pagination">
-                    <g:paginate total="${categoryInstanceCount ?: 0}" />
+                    <g:paginate total="${categoryInstanceCount ?: 0}" controller="category" action="index" />
                 </div>
             </div>
         </div>

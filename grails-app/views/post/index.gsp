@@ -65,7 +65,7 @@
                 </div>
 
                 <div class="pagination">
-                    <g:paginate total="${postInstanceCount ?: 0}" />
+                    <g:paginate total="${postInstanceCount ?: 0}" controller="post" action="index" />
                 </div>
             </div>
         </div>
