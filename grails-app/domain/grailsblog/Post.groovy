@@ -11,6 +11,8 @@ class Post {
 
     static belongsTo = [author: SecUser]
 
+    static hasMany = [comments: Comment]
+
     static constraints = {
         title blank: false, nullable: false
         content blank: false, nullable: false, type: 'text'
