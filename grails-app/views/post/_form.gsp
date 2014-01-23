@@ -66,6 +66,7 @@
     tinymce.init({
         selector: "textarea.tinymce-editor",
         height: 400,
+        encoding: "raw",
         plugins: [
             "advlist autolink lists link image charmap print preview anchor",
             "searchreplace visualblocks code fullscreen",
