@@ -1,9 +1,9 @@
 language: groovy
 
-# addons:
-    # sauce_connect:
-        # username: "masood09"
-        # access_key: "a677f19e-8103-4576-8ab8-71c0dbfe29c2"
+addons:
+    sauce_connect:
+        username: "masood09"
+        access_key: "a677f19e-8103-4576-8ab8-71c0dbfe29c2"
 
 jdk:
     - oraclejdk7
@@ -19,4 +19,9 @@ before_install:
     - "sh -e /etc/init.d/xvfb start"
 
 script: ./grailsw refresh-dependencies
-    && ./grailsw test-app
+    && ./grailsw -Dgeb.env=travisxpie8 test-app
+    && ./grailsw -Dgeb.env=traviswin7ie8 test-app
+    && ./grailsw -Dgeb.env=traviswin7ie9 test-app
+    && ./grailsw -Dgeb.env=traviswin7ie10 test-app
+    && ./grailsw -Dgeb.env=traviswin8ie10 test-app
+    && ./grailsw -Dgeb.env=traviswin81ie11 test-app
